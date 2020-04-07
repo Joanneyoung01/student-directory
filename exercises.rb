@@ -37,10 +37,11 @@ def input_students
 end
 
 def print(students)
-  students.each_with_index do |student, index|
-    
-    if student[:name].chr === "S"
-      puts "#{index}. #{student[:name]} (#{student[:cohort]} cohort)"
+  while students.length < 12 do
+    students.each_with_index do |student, index|
+      if student[:name].chr === "S" && student[:name].length < 12
+        puts "#{index}. #{student[:name]} (#{student[:cohort]} cohort)"
+      end
     end
   end
   students
@@ -54,4 +55,3 @@ students = input_students
 print_header
 print(students)
 print_footer(students)
-
