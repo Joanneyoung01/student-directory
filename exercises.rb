@@ -1,18 +1,3 @@
-student_count = 11
-students = [
-  {name: "Dr. Hannibal Lecter", cohort: :november},
-  {name: "Darth Vader", cohort: :november},
-  {name: "Nurse Ratched", cohort: :november},
-  {name: "Michael Corleone", cohort: :november},
-  {name: "Alex DeLarge", cohort: :november},
-  {name: "The Wicked Witch of the West", cohort: :november},
-  {name: "Terminator", cohort: :november},
-  {name: "Freddy Krueger", cohort: :november},
-  {name: "The Joker", cohort: :november},
-  {name: "Joffrey Baratheon", cohort: :november},
-  {name: "Norman Bates", cohort: :november}
-]
-
 def print_header
   puts "The students of Villains Academy"
   puts "-------------------"
@@ -25,23 +10,23 @@ def input_students
   students = []
   # get the first name
   name = gets.chomp
+  puts "what's their superpower"
+  superpower = gets.chomp
   #while the name is not empty, repeat this code
   while !name.empty? do
-    students << {name: name, cohort: :november}
+    students << {name: name, superpower: superpower, cohort: :november}
     puts "Now we have #{students.count} students"
     #get another name from the user
-    name = gets.chomp 
+    name = gets.chomp
   end
   #return the array of students
   students
 end
 
 def print(students)
-  while students.length < 12 do
-    students.each_with_index do |student, index|
-      if student[:name].chr === "S" && student[:name].length < 12
-        puts "#{index}. #{student[:name]} (#{student[:cohort]} cohort)"
-      end
+  students.each_with_index do |student, index|
+    if student[:name].chr === "J" && student[:name].length < 12
+      puts "#{index}. #{student[:name]}, their superpower is #{student[:superpower]} (#{student[:cohort]} cohort)"
     end
   end
   students
