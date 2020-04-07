@@ -32,9 +32,15 @@ def input_students
 end
 
 def print(students)
-  
+      
+  puts "What cohort would you like to see:"
+  cohort_choice = gets.chomp
+
   students.each_with_index do |student, index|
-    puts "#{index+1}. #{student[:name]}, their superpower is #{student[:superpower]} (#{student[:cohort]} cohort)"
+
+    if student[:cohort] == cohort_choice.to_sym
+      puts "#{index+1}. #{student[:name]}, their superpower is #{student[:superpower]} (#{student[:cohort]} cohort)"
+    end
   end
   students
 end
