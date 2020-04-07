@@ -1,22 +1,31 @@
 student_count = 11
 students = [
-  "Dr. Hannibal Lecter"
-  "Darth Vader"
-  "Nurse Ratched"
-  "Michael Corleone"
-  "Alex Delarge"
-  "The Wicked Witch of the West"
-  "Terminator"
-  "Freddie Kruger"
-  "The Joker"
-  "Joffery Baratheon"
+  "Dr. Hannibal Lecter",
+  "Darth Vader",
+  "Nurse Ratched",
+  "Michael Corleone",
+  "Alex Delarge",
+  "The Wicked Witch of the West",
+  "Terminator",
+  "Freddie Kruger",
+  "The Joker",
+  "Joffery Baratheon",
   "Norman Bates"
 ]
-#print the list of student names
-"The students of Villains Academy"
-"-------------------"
-students.each do |student|
-  puts student
+
+def print_header
+  puts "The students of Villains Academy"
+  puts "-------------------"
 end
-#finally, we print the total number of students
-print "Overall, we have #{students.count} great students"
+def print(names)
+  names.each do |name|
+    puts name
+  end
+end
+def print_footer(names)
+  puts "Overall, we have #{names.count} great students"
+end
+#nothing happens untill we call the methods
+print_header
+print(students)
+print_footer(students)
