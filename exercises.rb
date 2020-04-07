@@ -17,7 +17,10 @@ def input_students
     students << {name: name, superpower: superpower, cohort: :november}
     puts "Now we have #{students.count} students"
     #get another name from the user
+    puts "what's the name of the next student?"
     name = gets.chomp
+    puts "and their superpower"
+    superpower = gets.chomp
   end
   #return the array of students
   students
@@ -25,9 +28,7 @@ end
 
 def print(students)
   students.each_with_index do |student, index|
-    if student[:name].chr === "J" && student[:name].length < 12
-      puts "#{index}. #{student[:name]}, their superpower is #{student[:superpower]} (#{student[:cohort]} cohort)"
-    end
+    puts "#{index}. #{student[:name]}, their superpower is #{student[:superpower]} (#{student[:cohort]} cohort)"
   end
   students
 end
