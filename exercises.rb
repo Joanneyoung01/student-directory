@@ -18,7 +18,11 @@ def input_students
   #while the name is not empty, repeat this code
   while !name.empty? do
     students << {name: name, superpower: superpower, cohort: cohort.to_sym}
-    puts "Now we have #{students.count} students"
+    if students.count <= 1
+      puts "Now we have #{students.count} student"
+    else
+      puts "Now we have #{students.count} students"
+    end
     #get another name from the user
     puts "What's the name of the next student?"
     name = gets.chomp
@@ -53,3 +57,4 @@ students = input_students
 print_header
 print(students)
 print_footer(students)
+
