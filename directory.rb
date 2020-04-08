@@ -9,7 +9,7 @@ end
 
 def load_students
   #hidden file is saved in .gitignore folder
-  file = File.open("./.gitignore/students.csv", "r")
+  file = File.open("students.csv", "r")
   file.readlines.each do |line|
     name, cohort = line.chomp.split(',')
     @students << {name: name, cohort: cohort.to_sym}
